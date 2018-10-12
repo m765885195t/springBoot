@@ -5,14 +5,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @SpringBootApplication(scanBasePackages = "mo")
-@EnableWebMvc
 public class DemoApplication {
     // todo 统一管理api
     private String filterUrlPatterns = "/*";
-
 
     public static void main(String[] args) {
 //        启动方式

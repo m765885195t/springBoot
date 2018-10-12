@@ -6,6 +6,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
  * @Author: gongzhanjing
@@ -14,21 +15,18 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 //注册拦截器
 @Configuration
-public class WebMVCConfig extends WebMvcConfigurationSupport {
+//public class WebMVCConfig extends WebMvcConfigurationSupport {
+public class WebMVCConfig extends WebMvcConfigurerAdapter {
     //WebMvcConfigurerAdapter 已过时   2.0  新的实现  WebMvcConfigurationSupport
-
-    @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("login");
-        registry.addViewController("/main.html").setViewName("dashboard");
-    }
 
     @Autowired
     private MyInterceptor myInterceptor;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(myInterceptor).addPathPatterns("/d**")
+        registry.addInterceptor(myInterceptor).addPathPatterns("/**")
+
         ;
+        super.addInterceptors(registry);
     }
 }

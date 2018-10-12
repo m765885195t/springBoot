@@ -29,12 +29,16 @@ repositories {
 
 dependencies {
     //springboot 相关
-// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: '2.0.5.RELEASE'
-    implementation('org.springframework.boot:spring-boot-starter-web')
+//    compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: '2.0.5.RELEASE'
+//    compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: '1.5.16.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: '1.2.8.RELEASE'
+
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.16.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.2.8.RELEASE'
 
 // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.0.5.RELEASE'
+//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.0.5.RELEASE'
 
     //2------数据库相关
     //实现mybatis框架的工具包

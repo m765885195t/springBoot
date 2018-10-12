@@ -20,12 +20,12 @@ public class TestFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        System.out.println("*************************TestFilter init");
+        System.out.println("*************************TestFilter doFilter");
         chain.doFilter(request, response);
     }
 
     @Override
     public void destroy() {
-        System.out.println("*************************TestFilter init");
+        System.out.println("*************************TestFilter destroy");
     }
 }
