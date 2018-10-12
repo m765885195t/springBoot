@@ -33,6 +33,8 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: '2.0.5.RELEASE'
     implementation('org.springframework.boot:spring-boot-starter-web')
 
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.0.5.RELEASE'
 
     //2------数据库相关
     //实现mybatis框架的工具包

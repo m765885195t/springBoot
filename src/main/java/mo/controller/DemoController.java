@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 @RequestMapping(DemoController.URL)
 @Slf4j
 public class DemoController {
-    public static final String URL = "/demo";
+    static final String URL = "/demo";
 
     @Autowired
     public Stu bean;
@@ -26,7 +26,7 @@ public class DemoController {
     @RequestMapping
     public String show(HttpServletRequest request, HttpServletResponse response) {
         log.warn("进来show方法了");
-        log.warn(bean.toString());
+        log.warn(bean.toString() +"{}" ,"hahaha");// 日志中的占位符
 
         return bean.toString();
     }
