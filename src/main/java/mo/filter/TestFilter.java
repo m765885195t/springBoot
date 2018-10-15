@@ -1,5 +1,7 @@
 package mo.filter;
 
+import lombok.extern.slf4j.Slf4j;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -12,20 +14,21 @@ import java.io.IOException;
  * @Author: gongzhanjing
  * @Date: 2018/10/12
  */
+@Slf4j
 public class TestFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        System.out.println("*************************TestFilter init");
+        log.warn("TestFilter doFilter开始初始化");
     }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        System.out.println("*************************TestFilter doFilter");
+        log.warn("TestFilter doFilter开始执行");
         chain.doFilter(request, response);
     }
 
     @Override
     public void destroy() {
-        System.out.println("*************************TestFilter destroy");
+        log.warn("TestFilter doFilter开始注销");
     }
 }

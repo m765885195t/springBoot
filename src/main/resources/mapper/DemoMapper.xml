@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mo.dao.mapper.DemoMapper">
+    <resultMap id="DemoType"
+               type="mo.dao.model.Demo">
+        <result property="name" column="name"/>
+        <result property="age" column="age"/>
+        <result property="sex" column="sex"/>
+    </resultMap>
+    <sql id="demoColums">
+        name,age,sex
+    </sql>
+    <select id="get" resultMap="DemoType">
+        SELECT
+        <include refid="demoColums"/>
+        FROM demo_stu
+        WHERE name=#{name}
+    </select>
+
+
+    <select id="list" resultMap="DemoType">
+        select
+        <include refid="demoColums"/>
+        from demo_stu
+    </select>
+
+</mapper>

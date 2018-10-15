@@ -22,8 +22,7 @@ public class MyInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
                              Object o) throws Exception {
-        System.out.printf("preHandle被调用");
-        log.warn("sdas");
+        log.warn("preHandle被调用,请求处理之前");
         return true;  //如果false，停止流程，api被拦截
     }
 
@@ -31,8 +30,7 @@ public class MyInterceptor implements HandlerInterceptor {
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response,
                            Object o, ModelAndView modelAndView) throws Exception {
-        System.out.println("postHandle被调用");
-        log.warn("sdas");
+        log.warn("postHandle被调用,请求处理完成,视图渲染前");
 
     }
 
@@ -41,8 +39,7 @@ public class MyInterceptor implements HandlerInterceptor {
     public void afterCompletion(HttpServletRequest httpServletRequest,
                                 HttpServletResponse httpServletResponse,
                                 Object o, Exception e) throws Exception {
-        System.out.println("afterCompletion被调用");
-        log.warn("sdas");
+        log.warn("afterCompletion被调用,渲染完视图后");
 
     }
 

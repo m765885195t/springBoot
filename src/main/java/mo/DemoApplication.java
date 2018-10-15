@@ -1,3 +1,5 @@
+package mo;
+
 import mo.dao.model.Stu;
 import mo.filter.TestFilter;
 import org.springframework.boot.Banner;
@@ -13,7 +15,7 @@ public class DemoApplication {
 
     public static void main(String[] args) {
 //        启动方式
-//        SpringApplication.run(DemoApplication.class,args);
+//        SpringApplication.run(mo.DemoApplication.class,args);
         SpringApplicationBuilder builder = new SpringApplicationBuilder(DemoApplication.class);
         builder.bannerMode(Banner.Mode.OFF).run(args);//关闭banner
     }

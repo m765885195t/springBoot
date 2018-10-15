@@ -14,13 +14,13 @@ public class Prop {
     @Bean
     @Profile("dev")
     public Demo devDemo(){
-        return new Demo("dev");
+        return new Demo();
     }
 
 
     @Bean
     @Profile("oline")
     public Demo onlineDemo(){
-        return new Demo("online");
+        return new Demo();
     }
 }

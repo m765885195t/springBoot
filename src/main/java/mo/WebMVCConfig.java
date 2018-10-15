@@ -1,3 +1,5 @@
+package mo;
+
 import mo.interceptor.MyInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -15,7 +17,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 //注册拦截器
 @Configuration
-//public class WebMVCConfig extends WebMvcConfigurationSupport {
+//public class mo.WebMVCConfig extends WebMvcConfigurationSupport {
 public class WebMVCConfig extends WebMvcConfigurerAdapter {
     //WebMvcConfigurerAdapter 已过时   2.0  新的实现  WebMvcConfigurationSupport
 
