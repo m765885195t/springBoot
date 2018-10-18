@@ -30,15 +30,22 @@ repositories {
 dependencies {
     //springboot 相关
     compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: '2.0.5.RELEASE'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.16.RELEASE'
-    //mybatis
-    compile('org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.0')
-    //spring boot监控
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.0.5.RELEASE'
-    //redis
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.0.5.RELEASE'
+
+   //redis
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '2.0.5.RELEASE'
     //aop
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.0.5.RELEASE'
+    //mybatis
+    compile('org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.2')
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-cache
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-cache', version: '2.0.5.RELEASE'
+
+
+    //swagger
+    compile (group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2')
+    compile (group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2')
 
     //2------数据库相关
     //实现mybatis框架的工具包
@@ -49,7 +56,13 @@ dependencies {
     //数据库连接池
 
     //4------工具包
-    //Google的基于java1.6的类库集合的扩展项
+    //Google的基于java1.6的类库集合的扩展项---------导致加入swager后起不来
+//    这个问题解决办法是因为swagger依赖google的guava，与当前项目的guava版本与之不匹配
+// 所以就将guava升到最新的版本
+    compile group: 'com.google.guava', name: 'guava', version: '26.0-jre'
+
+
+
     compile group: 'com.google.collections', name: 'google-collections', version: '1.0'
     // lombok插件包
     compile group: 'org.projectlombok', name: 'lombok', version: '1.16.20'
@@ -57,7 +70,7 @@ dependencies {
     compile group: 'com.alibaba', name: 'fastjson', version: '1.2.41'
     compile('net.sf.json-lib:json-lib:2.4:jdk15')
     //respose数据转换为json格式
-    compile 'com.fasterxml.jackson.core:jackson-databind:2.9.4'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.9.7'
 //    compile('org.codehaus.jackson:jackson-mybatis.mapper-asl:1.9.13')
 
     //5------测试

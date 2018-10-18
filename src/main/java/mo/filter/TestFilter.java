@@ -18,17 +18,17 @@ import java.io.IOException;
 public class TestFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        log.warn("TestFilter doFilter开始初始化");
+        log.warn("过滤器TestFilter doFilter开始初始化");
     }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        log.warn("TestFilter doFilter开始执行");
+        log.warn("过滤器TestFilter doFilter开始执行");
         chain.doFilter(request, response);
     }
 
     @Override
     public void destroy() {
-        log.warn("TestFilter doFilter开始注销");
+        log.warn("过滤器TestFilter doFilter开始注销");
     }
 }

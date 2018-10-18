@@ -29,18 +29,18 @@ import java.io.IOException;
 public class AuthFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        log.warn("AuthFilter doFilter开始初始化");
+        log.warn("过滤器AuthFilter doFilter开始初始化");
     }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        log.warn("AuthFilter doFilter开始执行");
+        log.warn("过滤器AuthFilter doFilter开始执行");
         chain.doFilter(request, response);
     }
 
     @Override
     public void destroy() {
-        log.warn("AuthFilter doFilter开始销毁");
+        log.warn("过滤器AuthFilter doFilter开始销毁");
 
     }
 }
