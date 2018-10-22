@@ -27,11 +27,10 @@ public class WebMVCConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/swagger-ui.html");
     }
 
-//    //过滤掉swagger界面
-//    @Override
-//    public void addResourceHandlers(ResourceHandlerRegistry registry){
-//        registry.addResourceHandler("/swagger-ui.html")
-//        .addResourceLocations("classpath:/META-INF/resources/");
-//
-//    }
+    //过滤掉swagger界面
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry){
+        registry.addResourceHandler("/rest/api/doc/**").
+                addResourceLocations("classpath:/swagger/dist/");
+    }
 }
