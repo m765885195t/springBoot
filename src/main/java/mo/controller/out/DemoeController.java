@@ -50,13 +50,13 @@ public class DemoeController {
                             @ExampleProperty(value = "{'property': 'test'}", mediaType = "application/json")
                     }))
     })
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "无权限访问",
-                    examples = @Example(value = {
-                            @ExampleProperty(value = "{'property': 'test'}", mediaType = "application/json")
-                    })
-            )
-    })
+//    @ApiResponses(value = {
+//            @ApiResponse(code = 200, message = "无权限访问",
+//                    examples = @Example(value = {
+//                            @ExampleProperty(value = "{'property': 'test'}", mediaType = "application/json")
+//                    })
+//            )
+//    })
 
     @RequestMapping(params = "method=get", method = RequestMethod.GET)
     public Map<String, Object> get(@RequestParam(value = "name") String name,

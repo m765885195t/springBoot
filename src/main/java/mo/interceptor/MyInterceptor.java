@@ -34,6 +34,10 @@ public class MyInterceptor implements HandlerInterceptor {
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response,
                            Object o, ModelAndView modelAndView) throws Exception {
+        log.info(request.getContextPath());
+        log.info(request.getPathInfo());
+        log.info(request.getRequestURI());
+        log.info(request.getServletPath());
         log.warn("拦截器postHandle被调用,请求处理完成,视图渲染前");
     }
 
@@ -42,6 +46,7 @@ public class MyInterceptor implements HandlerInterceptor {
     public void afterCompletion(HttpServletRequest httpServletRequest,
                                 HttpServletResponse httpServletResponse,
                                 Object o, Exception e) throws Exception {
+
         log.warn("拦截器afterCompletion被调用,渲染完视图后");
 
     }

@@ -23,7 +23,7 @@ import java.util.Map;
  * @Date: 2018/10/12
  */
 
-@Api(tags = "用户接口1", description = "URL:/yxt/api/user1")
+@Api(tags = "用户接口1", description = "URL:/in/demo")
 @RestController
 @RequestMapping(DemoController.URL)
 @Slf4j

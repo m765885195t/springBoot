@@ -18,4 +18,13 @@ public class Stu {
     private String id;
     private String name;
     private String pass;
+
+    public static void main(String[] args) {
+        System.out.println(A.ONLINE);
+    }
+
+    public enum A {
+        ALL, ONLINE
+    }
+
 }
