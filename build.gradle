@@ -67,5 +67,7 @@ dependencies {
     // lombok插件包
     compile group: 'org.projectlombok', name: 'lombok', version: '1.16.20'
 
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-configuration-processor
+    compile group: 'org.springframework.boot', name: 'spring-boot-configuration-processor', version: '2.0.5.RELEASE'
 
 }
