@@ -4,9 +4,13 @@ import com.google.common.collect.Maps;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponses;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import mo.constant.aa;
 import mo.dao.model.Demo;
 import mo.dao.model.Stu;
 import mo.service.DemoService;
@@ -18,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -37,6 +42,7 @@ public class Demo1Controller {
 
     @Autowired
     public DemoService demoService;
+
 
 
     // value是方法描述      notes是注意事项  response是返回类型的描述
@@ -64,7 +70,7 @@ public class Demo1Controller {
                                    HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> map = Maps.newHashMap();
         log.warn("开始调用server{}", "hahaha");// 日志中的占位符
-        map.put("demo", demoService.get(name));
+        map.put("demo", demoService.list());
         map.put("demo1", 1);
         return map;
     }
