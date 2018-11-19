@@ -1,5 +1,6 @@
 package mo;
 
+import lombok.extern.slf4j.Slf4j;
 import mo.dao.model.Stu;
 import mo.filter.TestFilter;
 import org.springframework.boot.Banner;
@@ -8,6 +9,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 
+@Slf4j
 @SpringBootApplication(scanBasePackages = "mo")
 public class DemoApplication {
     // todo 统一管理api
@@ -18,6 +20,7 @@ public class DemoApplication {
 //        SpringApplication.run(mo.DemoApplication.class,args);
         SpringApplicationBuilder builder = new SpringApplicationBuilder(DemoApplication.class);
         builder.bannerMode(Banner.Mode.OFF).run(args);//关闭banner
+        log.trace("das");
     }
 
     @Bean

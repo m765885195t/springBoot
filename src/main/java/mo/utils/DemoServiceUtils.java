@@ -1,19 +1,10 @@
 package mo.utils;
 
-import com.google.common.collect.Lists;
 import lombok.Data;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
-import java.time.DayOfWeek;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Comparator;
-import java.util.List;
-import java.util.TimeZone;
 
 /**
  * @Author: gongzhanjing
@@ -22,11 +13,57 @@ import java.util.TimeZone;
 public class DemoServiceUtils {
     public static void main(String[] args) {
 
-        System.out.println(getTodayStartTime());
-        System.out.println(getYesterdayStartTime());
-        System.out.println(getTomorrowStartTime());
+
+        System.out.println(getWeekStartTime(getTodayStartTime()));
+        System.out.println(getNextWeekStartTime(getTodayStartTime()));
+        System.out.println(getTuesdayStartTime(getTodayStartTime()));
 
 
+    }
+    /**
+     * 获取指定时间所在周的周一开始时间
+     */
+    public static long getWeekStartTime(long time) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTimeInMillis(time);
+        cal.setFirstDayOfWeek(Calendar.MONDAY);
+        cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+        return cal.getTimeInMillis();
+    }
+    /**
+     * 获取指定时间所在周的下周一开始时间
+     */
+    public static long getNextWeekStartTime(long time) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTimeInMillis(getWeekStartTime(time));
+        cal.add(Calendar.DATE, 7);
+        return cal.getTimeInMillis();
+    }
+    /**
+     * 获取指定时间所在周的周二开始时间
+     */
+    public static long getTuesdayStartTime(long time) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTimeInMillis(getWeekStartTime(time));
+        cal.setFirstDayOfWeek(Calendar.MONDAY);
+        cal.add(Calendar.DATE, 1);
+        return cal.getTimeInMillis();
+    }
+
+
+    public static long getWeekStartTime() {
+        Calendar cal = Calendar.getInstance();
+        cal.setFirstDayOfWeek(Calendar.MONDAY);
+        cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+        return cal.getTimeInMillis();
     }
 
     public static long getDayStartTime(Calendar cal) {
@@ -44,7 +81,7 @@ public class DemoServiceUtils {
     }
 
     public static long getYesterdayStartTime(Calendar cal) {
-        cal.set(Calendar.DATE, cal.get(Calendar.DATE)-1);
+        cal.set(Calendar.DATE, cal.get(Calendar.DATE) - 1);
         cal.set(Calendar.HOUR_OF_DAY, 0);
         cal.set(Calendar.MINUTE, 0);
         cal.set(Calendar.SECOND, 0);
@@ -57,8 +94,9 @@ public class DemoServiceUtils {
         cal.setTimeInMillis(System.currentTimeMillis());
         return getYesterdayStartTime(cal);
     }
+
     public static long getTomorrowStartTime(Calendar cal) {
-        cal.set(Calendar.DATE, cal.get(Calendar.DATE)+1);
+        cal.set(Calendar.DATE, cal.get(Calendar.DATE) + 1);
         cal.set(Calendar.HOUR_OF_DAY, 0);
         cal.set(Calendar.MINUTE, 0);
         cal.set(Calendar.SECOND, 0);
