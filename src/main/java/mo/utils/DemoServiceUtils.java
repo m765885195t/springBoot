@@ -12,13 +12,9 @@ import java.util.Calendar;
  */
 public class DemoServiceUtils {
     public static void main(String[] args) {
-
-
         System.out.println(getWeekStartTime(getTodayStartTime()));
         System.out.println(getNextWeekStartTime(getTodayStartTime()));
         System.out.println(getTuesdayStartTime(getTodayStartTime()));
-
-
     }
     /**
      * 获取指定时间所在周的周一开始时间
